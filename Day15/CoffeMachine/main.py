@@ -32,13 +32,12 @@ while continue_serving:
     # TODO 2) Turn off the Coffee Machine by entering “off” to the prompt.
     if user_choice.lower() == "off":
         continue_serving = False
+    # TODO 3) Print report
+    elif user_choice.lower() == 'report':
+        for key, value in resources.items():
+            print(f"{key.capitalize()}: {value}ml")
+        print(f"Money: ${money}")
     else:
-        # TODO 3) Print report
-        if user_choice.lower() == 'report':
-            for key, value in resources.items():
-                print(f"{key.capitalize()}: {value}ml")
-            print(f"Money: ${money}")
-
         # TODO 4)  Check resources sufficient?
         coffee_requested = get_recipe(user_choice)
 
